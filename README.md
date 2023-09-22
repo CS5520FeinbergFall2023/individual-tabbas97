@@ -5,3 +5,4 @@ This repo serves to record and track all my(Thameem Abbas Ibrahim Bathusha) work
 ## Assignments Completed:
 
 - Assignment 1 - A1 First App
+- Assignment 3 - A3 Clicky Clicky
