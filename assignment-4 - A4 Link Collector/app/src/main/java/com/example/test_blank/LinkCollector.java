@@ -1,9 +1,13 @@
 package com.example.test_blank;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -15,14 +19,14 @@ public class LinkCollector extends AppCompatActivity {
 
     static RecyclerView linkRecyclerView;
     static List<Link> linksList;
+    private static final int REQUEST_CODE = 1;
 
-    static boolean linkAdded = false;
+    private ActivityResultLauncher<Intent> addLinkDialogLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link_collector);
-
         linksList = new ArrayList<>();
 
         linkRecyclerView = findViewById(R.id.links_recycler_view);
@@ -35,15 +39,24 @@ public class LinkCollector extends AppCompatActivity {
         findViewById(R.id.link_add_button).setOnClickListener(view -> {
             // Launch the add link dialog activity
             android.content.Intent intent = new android.content.Intent(LinkCollector.this, AddLinkDialog.class);
-            startActivity(intent);
-
-            if (linkAdded) {
-                // Launch a snackbar to notify the user that the link has been added
-                Snackbar.make(view, "Link added", Snackbar.LENGTH_SHORT).show();
-
-                linkAdded = false;
-            }
+            startActivityForResult(intent, REQUEST_CODE);
         });
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("requestCode: " + requestCode);
+        System.out.println("resultCode: " + resultCode);
+        System.out.println("data: " + data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                System.out.println("result ok");
+                Snackbar.make(findViewById(R.id.link_collector_layout), "Link added", Snackbar.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override

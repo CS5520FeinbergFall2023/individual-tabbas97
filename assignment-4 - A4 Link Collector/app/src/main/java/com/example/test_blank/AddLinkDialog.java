@@ -2,8 +2,11 @@ package com.example.test_blank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class AddLinkDialog extends AppCompatActivity {
 
@@ -48,11 +51,11 @@ public class AddLinkDialog extends AppCompatActivity {
             // Notify the adapter that the data has changed
             LinkCollector.linkRecyclerView.getAdapter().notifyDataSetChanged();
 
-            // Set the linkAdded flag to true
-            LinkCollector.linkAdded = true;
-
+            Intent returnIntent = new Intent();
+            setResult(RESULT_OK, returnIntent);
             // Close the dialog
             finish();
+
         });
 
         // Add action listener to Cancel button - just close
