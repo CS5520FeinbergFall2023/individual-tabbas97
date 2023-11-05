@@ -6,4 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".LocationConfirmed">
 
+<!--    Elements in the page-->
+<!--    1. Title
+        2. Current Lat Long
+        3. Current Address
+        5. Total Distance Travelled
+        6. Reset Button
+-->
+    <TextView
+        android:id="@+id/location_confirmed_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Location Confirmed"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_confirmed_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/current_latitude_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Latitude"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/current_latitude"
+            android:text="0.0"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/current_latitude_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/current_longitude_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Longitude"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/current_latitude"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/current_longitude"
+            android:text="0.0"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/current_longitude_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/current_address_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Current Address"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/current_longitude"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/current_address"-->
+<!--            android:text="0.0"-->
+<!--            android:textSize="18sp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/current_address_title"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            />-->
+
+        <TextView
+            android:id="@+id/total_distance_travelled_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Distance Travelled"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/current_longitude"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_distance_travelled"
+            android:text="0.0"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/total_distance_travelled_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/total_distance_travelled"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
